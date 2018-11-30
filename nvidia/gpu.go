@@ -76,5 +76,6 @@ func (g Utilization) run(cmd *exec.Cmd, gpuCount int, query string, action Actio
 		events[gpuIndex] = event
 		gpuIndex++
 	}
+	cmd.Wait()
 	return events, nil
 }
